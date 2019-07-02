@@ -1,0 +1,154 @@
+// Styles goes here..
+
+// using mobile first method (IE8,7 requires respond.js polyfill https://github.com/scottjehl/Respond)
+
+$breakpoint-alpha: 992px; // adjust to your needs
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #fff;
+}
+
+.loader-image {
+  text-align: center;
+}
+.loader-content {
+  font-size: 16px;
+  color: #0c4d33;
+  text-align: center;
+  @media (min-width: $breakpoint-alpha) {
+    padding-left: 0;
+  }
+  padding-left: 50px;
+}
+.userlist-table {
+  margin: 1em 0;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: normal;
+  background: #fff;
+  color: #0c4d33;
+  overflow: hidden;
+  border-collapse: collapse;
+
+  th {
+    display: none;
+    color: #fff;
+    background-color: #0c4d33;
+    font-size: 1.2rem;
+  }
+  tr:hover {
+    background-color: #d9d9d9;
+  }
+  td {
+    display: block;
+    padding: 0;
+
+    &:before {
+      content: attr(data-th);
+      font-weight: bold;
+      color: #fff;
+      background-color: #0c4d33;
+      width: 5.5em;
+      display: inline-block;
+      padding: 0.4em;
+
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+
+  th,
+  td {
+    text-align: left;
+    border: 1px solid #1fab2e;
+
+    &:last-child {
+      margin-bottom: 1em;
+    }
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: 0.25em 0.5em;
+      border-bottom: 1px solid #1fab2e;
+      padding: 1em !important;
+      font-size: 16px;
+      line-height: 1.5;
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.user-detail {
+  margin: 1em 0;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  color: #0c4d33;
+  border-collapse: collapse;
+  border: 1px solid #1fab2e;
+  tr {
+    &:first-child {
+      td {
+        font-size: 16px;
+        line-height: 1.5;
+
+        color: #fff;
+        background-color: #0c4d33;
+        @media (min-width: $breakpoint-alpha) {
+          font-size: 24px;
+        }
+        &:before {
+          width: 0;
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      td {
+        padding-bottom: 150px;
+        padding-right: 10px;
+        padding-left: 5px;
+        &:before {
+          width: 4em;
+        }
+        @media (min-width: $breakpoint-alpha) {
+          padding-right: 40px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  td {
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: normal;
+    display: table-cell;
+    padding: 0;
+    border-bottom: 1px solid #1fab2e;
+    @media (min-width: $breakpoint-alpha) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    &:before {
+      content: attr(data-td);
+      font-weight: bold;
+      color: #0c4d33;
+      width: 6.5em;
+      display: inline-block;
+      padding: 0.4em;
+    }
+  }
+}
